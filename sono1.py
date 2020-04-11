@@ -11,15 +11,17 @@ import wx
 import wx.xrc
 
 ###########################################################################
-## Class top
+## Class Top
 ###########################################################################
 
-class top ( wx.Frame ):
+class Top ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Top!", pos = wx.DefaultPosition, size = wx.Size( 800,600 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Top!", pos = wx.DefaultPosition, size = wx.Size( 1024,768 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+		self.SetFont( wx.Font( 16, wx.FONTFAMILY_MODERN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "メイリオ" ) )
+		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
 
 		bSizer1 = wx.BoxSizer( wx.VERTICAL )
 
@@ -28,10 +30,10 @@ class top ( wx.Frame ):
 
 		self.mayu = wx.BitmapButton( self, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW|wx.BORDER_NONE|wx.BU_BOTTOM|wx.BU_LEFT|wx.BU_RIGHT|wx.BU_TOP )
 
-		self.mayu.SetBitmap( wx.Bitmap( u"640.jpg", wx.BITMAP_TYPE_ANY ) )
+		self.mayu.SetBitmap( wx.Bitmap( u"images/640.jpg", wx.BITMAP_TYPE_ANY ) )
 		bSizer1.Add( self.mayu, 0, wx.ALL, 5 )
 
-		self.m_toggleBtn1 = wx.ToggleButton( self, wx.ID_ANY, u"Toggle me!", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_toggleBtn1 = wx.ToggleButton( self, wx.ID_ANY, u"とぐる", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_toggleBtn1.SetValue( True )
 		bSizer1.Add( self.m_toggleBtn1, 0, wx.ALL, 5 )
 
