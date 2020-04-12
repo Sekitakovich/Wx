@@ -1,8 +1,8 @@
 import wx
-from sono1top import sono1top
+from studyTopFrame import studyTopFrame
 
 if __name__ == '__main__':
     app = wx.App()
-    frame = sono1top()
+    frame = studyTopFrame(parent=None)
     frame.Show(True)
     app.MainLoop()
