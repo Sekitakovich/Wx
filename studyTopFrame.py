@@ -18,3 +18,12 @@ class studyTopFrame(study.TopFrame):
     def onSlider(self, event: wx.Event):
         percent: int = event.EventObject.Value
         logger.debug(percent)
+
+    def dirchange( self, event ):
+        path = event.EventObject.Path
+        logger.debug(path)
+
+    def filechange( self, event ):
+        path = event.EventObject.Path
+        logger.debug(path)
+

@@ -39,6 +39,12 @@ class TopFrame ( wx.Frame ):
 		self.m_slider1 = wx.Slider( self.MenuPanel, wx.ID_ANY, 50, 0, 100, wx.DefaultPosition, wx.DefaultSize, wx.SL_HORIZONTAL )
 		MenuSizer.Add( self.m_slider1, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.EXPAND, 5 )
 
+		self.m_dirPicker1 = wx.DirPickerCtrl( self.MenuPanel, wx.ID_ANY, wx.EmptyString, u"Select a folder", wx.DefaultPosition, wx.DefaultSize, wx.DIRP_DEFAULT_STYLE )
+		MenuSizer.Add( self.m_dirPicker1, 0, wx.ALL, 5 )
+
+		self.m_filePicker1 = wx.FilePickerCtrl( self.MenuPanel, wx.ID_ANY, wx.EmptyString, u"Select a file", u"*.*", wx.DefaultPosition, wx.DefaultSize, wx.FLP_DEFAULT_STYLE )
+		MenuSizer.Add( self.m_filePicker1, 0, wx.ALL, 5 )
+
 
 		self.MenuPanel.SetSizer( MenuSizer )
 		self.MenuPanel.Layout()
@@ -69,6 +75,8 @@ class TopFrame ( wx.Frame ):
 		self.topButton.Bind( wx.EVT_BUTTON, self.click )
 		self.calendar.Bind( wx.adv.EVT_CALENDAR_SEL_CHANGED, self.onCalendar )
 		self.m_slider1.Bind( wx.EVT_SCROLL, self.onSlider )
+		self.m_dirPicker1.Bind( wx.EVT_DIRPICKER_CHANGED, self.dirchange )
+		self.m_filePicker1.Bind( wx.EVT_FILEPICKER_CHANGED, self.filechange )
 
 	def __del__( self ):
 		pass
@@ -82,6 +90,12 @@ class TopFrame ( wx.Frame ):
 		event.Skip()
 
 	def onSlider( self, event ):
+		event.Skip()
+
+	def dirchange( self, event ):
+		event.Skip()
+
+	def filechange( self, event ):
 		event.Skip()
 
 
