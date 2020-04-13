@@ -68,6 +68,9 @@ class TopFrame ( wx.Frame ):
 
 		self.SetSizer( Top )
 		self.Layout()
+		self.m_statusBar1 = self.CreateStatusBar( 1, wx.STB_SIZEGRIP, wx.ID_ANY )
+		self.m_statusBar1.SetToolTip( u"Hi!" )
+
 
 		self.Centre( wx.BOTH )
 
