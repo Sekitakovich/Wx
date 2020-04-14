@@ -19,11 +19,10 @@ class studyTopFrame(study.TopFrame):
         percent: int = event.EventObject.Value
         logger.debug(percent)
 
-    def dirchange( self, event ):
+    def dirchange(self, event):
         path = event.EventObject.Path
         logger.debug(path)
 
-    def filechange( self, event ):
+    def filechange(self, event):
         path = event.EventObject.Path
         logger.debug(path)
-
